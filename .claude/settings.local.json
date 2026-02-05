@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(npx:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout 5)",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(docker compose up -d postgres redis)",
+      "Bash(docker compose down)",
+      "Bash(docker stop hp-postgres)",
+      "Bash(docker rm hp-postgres)",
+      "Bash(docker compose up -d postgres)",
+      "Bash(docker ps --format \"table {{.Names}}\\\\t{{.Ports}}\\\\t{{.Status}}\")",
+      "Bash(docker port hp-postgres)",
+      "Bash(docker exec hp-postgres psql -U user -d high_performance -c \"SELECT 1\")",
+      "Bash(docker inspect:*)",
+      "Bash(docker network:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker stop:*)",
+      "Bash(docker rm:*)",
+      "Bash(docker run:*)",
+      "Bash(python:*)",
+      "Bash(\"D:/OPENPROJECT/High-Performance/.venv/Scripts/python.exe\":*)",
+      "Bash(\"D:/OPENPROJECT/High-Performance/.venv/Scripts/pip.exe\" install -r \"D:/OPENPROJECT/High-Performance/backend/requirements.txt\")",
+      "Bash(where:*)",
+      "Bash(\"D:/OPENPROJECT/High-Performance/.venv/Scripts/pip.exe\" install sqlalchemy psycopg2-binary fastapi uvicorn pydantic pydantic-settings python-jose passlib bcrypt python-multipart email-validator python-dotenv alembic)",
+      "Bash(\"D:/OPENPROJECT/High-Performance/.venv/Scripts/python.exe\" -c \"\nimport sys, os\nsys.path.insert\\(0, os.getcwd\\(\\)\\)\nfrom app.database import Base, engine\nfrom app.models import User, Goal, Task, Achievement\nprint\\(''Creating tables...''\\)\nBase.metadata.create_all\\(bind=engine\\)\nprint\\(''Tables created!''\\)\n\")"
+    ]
+  }
+}
