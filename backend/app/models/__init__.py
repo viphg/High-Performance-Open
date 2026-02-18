@@ -3,5 +3,6 @@ from app.models.goal import Goal, GoalStatus
 from app.models.task import Task, TaskStatus
 from app.models.achievement import Achievement
 from app.models.achievements import UserAchievement, UserStreak, Notification
+from app.models.notification import NotificationPreference
 
-__all__ = ['User', 'Goal', 'GoalStatus', 'Task', 'TaskStatus', 'Achievement', 'UserAchievement', 'UserStreak', 'Notification']
+__all__ = ['User', 'Goal', 'GoalStatus', 'Task', 'TaskStatus', 'Achievement', 'UserAchievement', 'UserStreak', 'Notification', 'NotificationPreference']

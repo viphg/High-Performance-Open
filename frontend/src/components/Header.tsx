@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/stores/authStore'
 import { useTheme } from '@/context/ThemeContext'
 import type { ThemeType } from '@/context/ThemeContext'
+import NotificationBell from './NotificationBell'
 
 const themeOptions: { value: ThemeType; label: string; icon: string }[] = [
   { value: 'indigo', label: '靛蓝', icon: '💜' },
@@ -60,6 +61,9 @@ export default function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
+          {/* Notification Bell */}
+          <NotificationBell />
+
           {/* Theme Selector */}
           <div className="relative" ref={themeRef}>
             <button

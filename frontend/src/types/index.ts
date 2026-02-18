@@ -5,6 +5,7 @@ export interface User {
   email: string
   full_name?: string
   is_active: boolean
+  is_admin: boolean
 }
 
 // 认证相关类型
@@ -98,5 +99,39 @@ export interface Stats {
   activeGoals: number
   activeTasks: number
   overdueTasks: number
+}
+
+// 通知相关类型
+export interface Notification {
+  id: number
+  type: string
+  title: string
+  content: string
+  related_type?: string
+  related_id?: number
+  is_read: boolean
+  read_at?: string
+  channel: string
+  email_sent: boolean
+  created_at: string
+}
+
+export interface NotificationPreference {
+  id: number
+  user_id: number
+  task_due_email: boolean
+  task_due_web: boolean
+  task_due_hours_before: number
+  goal_progress_email: boolean
+  goal_progress_web: boolean
+  goal_progress_percentage: number
+  achievement_email: boolean
+  achievement_web: boolean
+  daily_digest: boolean
+  digest_time: string
+  digest_email: boolean
+  digest_web: boolean
+  system_announcement_email: boolean
+  system_announcement_web: boolean
 }
 

@@ -1,10 +1,12 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useTheme } from '@/context/ThemeContext'
+import { useAuthStore } from '@/stores/authStore'
 
 export default function Navigation() {
   const navigate = useNavigate()
   const location = useLocation()
   const { theme } = useTheme()
+  const { user } = useAuthStore()
 
   const isActive = (path: string) => location.pathname === path
 
@@ -15,6 +17,11 @@ export default function Navigation() {
     { path: '/achievements', label: '成就' },
     { path: '/analytics', label: '分析' },
   ]
+
+  // 只有管理员才显示管理菜单
+  if (user?.is_admin) {
+    navItems.push({ path: '/admin', label: '管理' })
+  }
 
   return (
     <nav className="bg-white shadow-sm sticky top-[68px] z-40 border-b border-gray-200">

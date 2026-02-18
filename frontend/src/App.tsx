@@ -18,6 +18,10 @@ import TaskDetailPage from './pages/dashboard/TaskDetail'
 import AchievementsPage from './pages/dashboard/Achievements'
 import AnalyticsPage from './pages/dashboard/Analytics'
 import ProfilePage from './pages/Profile'
+import NotificationsPage from './pages/Notifications'
+import NotificationSettings from './pages/NotificationSettings'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import UserManagement from './pages/admin/UserManagement'
 
 // Protected Route Component
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -119,6 +123,44 @@ function App() {
               element={
                 <ProtectedRoute>
                   <ProfilePage />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Notification Routes */}
+            <Route
+              path="/notifications"
+              element={
+                <ProtectedRoute>
+                  <NotificationsPage />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/settings/notifications"
+              element={
+                <ProtectedRoute>
+                  <NotificationSettings />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Admin Routes */}
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/admin/users"
+              element={
+                <ProtectedRoute>
+                  <UserManagement />
                 </ProtectedRoute>
               }
             />

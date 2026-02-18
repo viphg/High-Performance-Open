@@ -18,10 +18,10 @@ client.interceptors.request.use((config) => {
 // 响应拦截器
 client.interceptors.response.use(
   (response) => response,
-  (error) => {
+(error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem(AUTH_TOKEN_KEY)
-      window.location.href = '/login'
+      window.location.href = '/auth/login'
     }
     return Promise.reject(error)
   }

@@ -30,7 +30,16 @@ class Settings(BaseSettings):
     FROM_EMAIL: str = "noreply@highperformance.com"
     
     # CORS 配置
-    CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:5175", "http://localhost:3000"]
+    CORS_ORIGINS: List[str] = [
+        "http://localhost:5173", 
+        "http://localhost:5175", 
+        "http://localhost:5176",
+        "http://localhost:3000",
+        "https://highperformance.152.199.108",
+        "https://www.highperformance.152.199.108",
+        "http://highperformance.152.199.108",
+        "http://www.highperformance.152.199.108"
+    ]
     
     class Config:
         env_file = ".env"
